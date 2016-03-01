@@ -33,6 +33,8 @@
    * [okio分析](okio/okio分析.md)
 * [OpenSourceAnalysis](OpenSourceAnalysis/README.md)
    * [EventBus源码解析](OpenSourceAnalysis/EventBus源码解析.md)
+* [otto](otto/README.md)
+   * [Otto介绍](otto/Otto介绍.md)
 * [ReactNative](ReactNative/README.md)
    * [ReactNative For Android 项目实战总结](ReactNative/ReactNative For Android 项目实战总结.md)
 * [RecyclerView](RecyclerView/README.md)
