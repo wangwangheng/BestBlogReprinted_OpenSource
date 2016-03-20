@@ -12,9 +12,12 @@ chmod a+x ./build.sh
 
 * 2、编译
 
+
 ```
 ./build.sh
 ```
+
+> Notes:有可能会自动升级gitbook
 
 * 3、查看
 
