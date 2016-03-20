@@ -153,8 +153,7 @@ public class HomeActivity extends ActionBarActivity{
 这么看起来用法与ListView的代码基本一致哈~~ 
 
 看下效果图：
-
-![](recyclerview-csdn-1.png)
+![](recyclerview-csdn/recyclerview-csdn-1.png)
 
 看起来好丑，Item间应该有个分割线，当你去找时，你会发现RecyclerView并没有支持divider这样的属性。那么怎么办，你可以给Item的布局去设置margin，当然了这种方式不够优雅，我们文章开始说了，我们可以自由的去定制它，当然我们的分割线也是可以定制的。
 
@@ -325,7 +324,7 @@ DividerItemDecoration.VERTICAL_LIST));
 ```
 ok，现在再运行，就可以看到分割线的效果了。
 
-![](recyclerview-csdn-2.png)
+![](recyclerview-csdn/recyclerview-csdn-2.png)
 
 该分割线是系统默认的，你可以在theme.xml中找到该属性的使用情况。那么，使用系统的listDivider有什么好处呢？就是方便我们去随意的改变，该属性我们可以直接声明在：
 
@@ -355,7 +354,7 @@ ok，现在再运行，就可以看到分割线的效果了。
 
 现在的样子是：
 
-![](recyclerview-csdn-3.png)
+![](recyclerview-csdn/recyclerview-csdn-3.png)
 
 当然了，你可以根据自己的需求，去随意的绘制，反正是画出来的，随便玩~~
 
@@ -552,7 +551,7 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
 
 最后的效果是：
 
-![](recyclerview-csdn-4.gif)
+![](recyclerview-csdn/recyclerview-csdn-4.gif)
 
 ok，看到这，你可能还觉得RecyclerView不够强大？
 
@@ -579,7 +578,7 @@ mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4,
 
 那么效果为：
 
-![](recyclerview-csdn-5.gif)
+![](recyclerview-csdn/recyclerview-csdn-5.gif)
 
 可以看到，固定为4行，变成了左右滑动。有一点需要注意，如果是横向的时候，item的宽度需要注意去设置，毕竟横向的宽度没有约束了，应为控件可以横向滚动了。 
 如果你需要一样横向滚动的GridView，那么恭喜你。
@@ -588,7 +587,7 @@ ok，接下来准备看大招，如果让你去实现个瀑布流，最起码不
 
 那么如何实现？其实你什么都不用做，只要使用`StaggeredGridLayoutManager`我们就已经实现了，只是上面的item布局我们使用了固定的高度，下面我们仅仅在适配器的`onBindViewHolder`方法中为我们的item设置个随机的高度（代码就不贴了，最后会给出源码下载地址），看看效果图：
 
-![](recyclerview-csdn-6.gif)
+![](recyclerview-csdn/recyclerview-csdn-6.gif)
 
 是不是棒棒哒，通过RecyclerView去实现ListView、GridView、瀑布流的效果基本上没有什么区别，而且可以仅仅通过设置不同的LayoutManager即可实现。
 
@@ -607,11 +606,11 @@ mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 系统为我们提供了一个默认的实现，我们为我们的瀑布流添加以上一行代码，效果为：
 
-![](recyclerview-csdn-7.gif)
+![](recyclerview-csdn/recyclerview-csdn-7.gif)
 
 如果是GridLayoutManager呢？动画效果为：
 
-![](recyclerview-csdn-8.gif)
+![](recyclerview-csdn/recyclerview-csdn-8.gif)
 
 注意，这里更新数据集不是用`adapter.notifyDataSetChanged()`而是`notifyItemInserted(position)`与`notifyItemRemoved(position) `,否则没有动画效果。 
 
@@ -749,7 +748,7 @@ mAdapter.setOnItemClickLitener(new OnItemClickLitener(){
 
 测试效果：
 
-![](recyclerview-csdn-9.gif)
+![](recyclerview-csdn/recyclerview-csdn-9.gif)
 
 ok，到此我们基本介绍了RecylerView常见用法，包含了：
 

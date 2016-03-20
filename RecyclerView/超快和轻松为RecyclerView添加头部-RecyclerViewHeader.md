@@ -6,7 +6,7 @@
 
 运行效果：
 
-![](RecyclerViewHeader-1.png)
+![](RecyclerViewHeader/RecyclerViewHeader-1.png)
 
 ## 使用说明：
 
@@ -97,7 +97,7 @@ header.attachTo(recyclerView, true);
 * 只支持垂直布局LayoutManager
 * 如果你打算在RecyclerView中使用setOnScrollListener(...)方法，确保在setOnScrollListener(...)的attachTo(...)方法之前使用。
 
-![](RecyclerViewHeader-2.png)
+![](RecyclerViewHeader/RecyclerViewHeader-2.png)
 
 
 

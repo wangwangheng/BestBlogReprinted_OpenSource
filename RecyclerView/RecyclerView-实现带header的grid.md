@@ -23,7 +23,7 @@ recyclerView.setAdapter(new NumberedAdapter(30));
 
 [NumberedAdapter](https://github.com/chiuki/android-recyclerview/blob/master/app/src/main/java/com/sqisland/android/recyclerview/NumberedAdapter.java) 以字符串的形式显示了每个item的position，在点击的时候显示一个toast。
 
-![](RecyclerView-Header-1.png)
+![](RecyclerView-Header/RecyclerView-Header-1.png)
 
 [GridLayoutActivity.java](https://github.com/chiuki/android-recyclerview/blob/master/app/src/main/java/com/sqisland/android/recyclerview/GridLayoutActivity.java)
 
@@ -46,7 +46,7 @@ recyclerView.setLayoutManager(manager);
 
 setSpanSizeLookup可以让你根据position来设置 span size，上面代码中的公式所得到的 span size依次是3, 2, 1, 3, 2, 1...
 
-![](RecyclerView-Header-2.png)
+![](RecyclerView-Header/RecyclerView-Header-2.png)
 
 [GridLayoutVariableSpanSizeActivity.java](https://github.com/chiuki/android-recyclerview/blob/master/app/src/main/java/com/sqisland/android/recyclerview/GridLayoutVariableSpanSizeActivity.java)
 
@@ -174,7 +174,7 @@ manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
 
 我们inflate header，定义它的点击事件，使用它去构造adapter。然后再setSpanSizeLookup中，我们在header所处的位置返回和span count （列数）相等的 span size。
 
-![](RecyclerView-Header-3.png)
+![](RecyclerView-Header/RecyclerView-Header-3.png)
 
 ## 总结
 
