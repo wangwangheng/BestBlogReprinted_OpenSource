@@ -52,6 +52,7 @@
    * [RecyclerView源码分析-某学姐](RecyclerView/RecyclerView源码分析-某学姐.md)
    * [超快和轻松为RecyclerView添加头部-RecyclerViewHeader](RecyclerView/超快和轻松为RecyclerView添加头部-RecyclerViewHeader.md)
 * [Retrofit](Retrofit/README.md)
+   * [Retrofit分析-漂亮的解耦套路](Retrofit/Retrofit分析-漂亮的解耦套路.md)
    * [用Retrofit2简化HTTP请求](Retrofit/用Retrofit2简化HTTP请求.md)
 * [RippleEffect](RippleEffect/README.md)
    * [AndroidL中水波纹点击效果的实现](RippleEffect/AndroidL中水波纹点击效果的实现.md)
