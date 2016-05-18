@@ -9,6 +9,8 @@
    * [dagger2让你爱不释手：终结篇](Dagger2/dagger2让你爱不释手：终结篇.md)
    * [dagger2让你爱不释手：重点概念讲解、融合篇](Dagger2/dagger2让你爱不释手：重点概念讲解、融合篇.md)
    * [使用Dagger2进行依赖注入](Dagger2/使用Dagger2进行依赖注入.md)
+* [Depth-LIB-Android](Depth-LIB-Android/README.md)
+   * [小说Android开源篇-第一章——终于等到你Depth-LIB-Android](Depth-LIB-Android/小说Android开源篇-第一章——终于等到你Depth-LIB-Android.md)
 * [EventBus](EventBus/README.md)
    * [Android--EventBus解析](EventBus/Android--EventBus解析.md)
    * [EventBus3.0的用法详解-上下合辑](EventBus/EventBus3.0的用法详解-上下合辑.md)
