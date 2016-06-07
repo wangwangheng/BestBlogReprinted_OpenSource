@@ -12,6 +12,8 @@
 * [Depth-LIB-Android](Depth-LIB-Android/README.md)
    * [小说Android开源篇-第一章——终于等到你Depth-LIB-Android](Depth-LIB-Android/小说Android开源篇-第一章——终于等到你Depth-LIB-Android.md)
 * [EventBus](EventBus/README.md)
+   * [alighters-EventBus后续深入知识点整理](EventBus/alighters-EventBus后续深入知识点整理.md)
+   * [alighters-浅析EventBus3.0实现思想](EventBus/alighters-浅析EventBus3.0实现思想.md)
    * [Android--EventBus解析](EventBus/Android--EventBus解析.md)
    * [EventBus3.0的用法详解-上下合辑](EventBus/EventBus3.0的用法详解-上下合辑.md)
    * [EventBus源码解析](EventBus/EventBus源码解析.md)
