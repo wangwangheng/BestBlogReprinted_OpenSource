@@ -52,6 +52,7 @@
       * [Android高清加载巨图方案-拒绝压缩图片](ImageProcess/BitmapRegionDecoder/Android高清加载巨图方案-拒绝压缩图片.md)
 * [okhttp](okhttp/README.md)
    * [拆轮子系列-拆OkHttp](okhttp/拆轮子系列-拆OkHttp.md)
+   * [高效地配置OkHttp](okhttp/高效地配置OkHttp.md)
 * [okio](okio/README.md)
    * [okio分析](okio/okio分析.md)
    * [拆轮子系列-拆Okio](okio/拆轮子系列-拆Okio.md)
