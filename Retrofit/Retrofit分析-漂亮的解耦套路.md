@@ -12,7 +12,7 @@
 
 我们先来看一下没有HTTP框架以前，我们是如何做请求的。
 
-![](retrofit-decoupling/1.png)
+![](1/1.png)
 
 * 首先build request参数
 * 因为不能在主线程请求HTTP，所以你得有个Executer或者线程
@@ -39,7 +39,7 @@ retrofit的最大特点就是解耦，要解耦就需要大量的设计模式，
 
 先来看一张Stay画的精简流程图(如有错误，请斧正)，类图就不画了。
 
-![](retrofit-decoupling/2.png)
+![](1/2.png)
 
 Stay在一些设计模式很明确的地方做了标记。
 
@@ -49,16 +49,16 @@ Stay在一些设计模式很明确的地方做了标记。
 
 * 1、通过门面Retrofit来build一个Service Interface的proxy
 
-![](retrofit-decoupling/3.png)
+![](1/3.png)
 
 * 2、当你调用这个Service Interface中的某个请求方法，会被proxy拦截。
 
-![](retrofit-decoupling/4.png)
+![](1/4.png)
 
 * 3、通过**ServiceMethod**来解析invoke的那个方法 ，通过**解析注解**，传参，将它们封装成我们所熟悉的request。然后通过具体的返回值类型，让之前配置的工厂生成具体的**CallAdapter，ResponseConverter**，这俩我们稍后再解释。
 * 4、new一个OkHttpCall，这个OkHttpCall算是OkHttp的包装类，用它跟OkHttp对接，所有OkHttp需要的参数都可以看这个类。当然也还是可以扩展一个新的Call的，比如HttpUrlConnectionCall。但是有点耦合。看下图标注：
 
-![](retrofit-decoupling/5.png)
+![](1/5.png)
 
 红框中显式的指明了OkHttpCall，而不是通过工厂来生成Call。所以如果你不想改源码，重新编译，那你就只能使用OkHttp了。不过这不碍事。(可能也是因为还在持续更新中，所以这块可能后面会改进的)
 
@@ -66,17 +66,17 @@ Stay在一些设计模式很明确的地方做了标记。
 * 6、比如RxJava会根据调用方法的返回值，如Response<'T> |Result<'T>|Observable<'T> ，生成不同的CallAdapter。实际上就是对RxJava的回调方式做封装。比如将response再拆解为success和error等。(这块还是需要在了解RxJava的基础上去理解，以后有时间可以再详细做分析)
 * 7、在步骤5中，我们说CallAdapter还管理线程。比方说RxJava，我们知道，它最大的优点可以指定方法在什么线程下执行。如图
 
-![](retrofit-decoupling/6.png)
+![](1/6.png)
 
 我们在子线程订阅(subscribeOn)，在主线程观察(observeOn)。具体它是如何做的呢。我们看下源码。
 
-![](retrofit-decoupling/7.png)
+![](1/7.png)
 
 在adapt Call时，subscribeOn了，所以就切换到子线程中了。
 
 * 8、在adapt Call中，具体的调用了Call execute()，execute()是同步的，enqueue()是异步的。因为RxJava已经切换了线程，所以这里用同步方法execute()。
 
-![](retrofit-decoupling/8.png)
+![](1/8.png)
 
 * 9、接下来的具体请求，就是OkHttp的事情了，retrofit要做成的就是等待返回值。在步骤4中，我们说OkHttpCall是OkHttp的包装类，所以将OkHttp的response转换成我们要的T，也是在OkHttpCall中执行的。
 * 10、当然具体的解析转换操作也不是OkHttpCall来做的，因为它也不知道数据格式是什么样的。所以它只是将response包装成retrofit标准下的response。
@@ -86,7 +86,7 @@ Stay在一些设计模式很明确的地方做了标记。
 
 再来回顾下Stay画的流程图：
 
-![](retrofit-decoupling/2.png)
+![](1/2.png)
 
 这真是漫长的旅行，Stay也是debug一个个单步调试才梳理出来的流程。当然其中还有很多巧妙的解耦方式，我这里就不赘述了。大家可以看看源码分析下，当真是设计模式的经典示例。
 
